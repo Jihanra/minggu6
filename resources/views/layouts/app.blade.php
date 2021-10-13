@@ -52,6 +52,8 @@
                                 </li>
                             @endif
                         @else
+                            <a href="http://127.0.0.1:8000/home" class="btn">Home</a>
+                            <a href="http://127.0.0.1:8000/students" class="btn">CRUD</a>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
