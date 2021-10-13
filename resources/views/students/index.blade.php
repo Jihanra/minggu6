@@ -31,7 +31,12 @@
                                 <td>{{ $s->nim }}</td>
                                 <td>{{ $s->name }}</td>
                                 <td>{{ $s->class }}</td>
-                                <td><a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a></td>
+                                <td><form action="/students/{{$s->id}}" method="post">
+                                    <a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" name="delete" class="btn btn-danger">Delete</button>
+                                </form></td>
                             </tr>
                             @endforeach
                         </tbody>
