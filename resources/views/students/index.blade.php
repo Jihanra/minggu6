@@ -16,6 +16,7 @@
 
                     <table class='table table-responsive table-striped'>
                         <thead>
+                        <a href="/students/create" class="btn btn-primary">Add Data</a><br><br>
                             <tr>
                                 <th>NIM</th>
                                 <th>Name</th>
