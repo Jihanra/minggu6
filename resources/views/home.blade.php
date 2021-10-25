@@ -22,6 +22,7 @@
                         <tr><th>Email</th><th>:</th><td>{{ $user->email }}</td></tr>
                         <tr><th>Created At</th><th>:</th><td>{{ $user->created_at }}</td></tr>
                     </table>
+
                 </div>
             </div>
         </div>
