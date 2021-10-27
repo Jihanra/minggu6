@@ -27,7 +27,7 @@
                             <tr>
                                 <td>{{ $student->nim }}</td>
                                 <td>{{ $student->name }}</td>
-                                <td>{{ $student->class }}</td>
+                                <td>{{ $student->kelas->class_name }}</td>
                                 <td>{{ $student->department }}</td>
                                 <td>{{ $student->phone_number }}</td>
                             </tr>
