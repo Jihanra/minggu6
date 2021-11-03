@@ -49,7 +49,8 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" name="delete" class="btn btn-danger">Delete</button>
-                                    <a href="/students/{{$s->id}}" class="btn btn-info">View</a>
+                                    <a href="/students/{{$s->id}}" class="btn btn-success">View</a>
+                                    <a href="/students/{{$s->id}}/detail" class="btn btn-info">Nilai</a>
                                 </form></td>
                             </tr>
                             @endforeach
