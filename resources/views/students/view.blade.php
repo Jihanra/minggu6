@@ -16,23 +16,12 @@
 
                     <table class='table table-responsive table-striped'>
                         <thead>
-                            <tr>
-                                <th>NIM</th>
-                                <th>Name</th>
-                                <th>Class</th>
-                                <th>Department</th>
-                                <th>Phone Number</th>
-                            </tr>
-                        </thead>
-                            <tr>
-                                <td>{{ $student->nim }}</td>
-                                <td>{{ $student->name }}</td>
-                                <td>{{ $student->kelas->class_name }}</td>
-                                <td>{{ $student->department }}</td>
-                                <td>{{ $student->phone_number }}</td>
-                            </tr>
-
-                            
+                        <img width="150px" src="{{asset('storage/'.$student->photo)}}">
+                            <tr><th>NIM</th><th>:</th><td>{{ $student->nim }}</td></tr>
+                            <tr><th>Name</th><th>:</th><td>{{ $student->name }}</td></tr>
+                            <tr><th>Class</th><th>:</th><td>{{ $student->kelas->class_name }}</td></tr>
+                            <tr><th>Department</th><th>:</th><td>{{ $student->department }}</td></tr>
+                            <tr><th>Phone Number</th><th>:</th><td>{{ $student->phone_number }}</td></tr>
                         </thead>
                     </table>
                 </div>
