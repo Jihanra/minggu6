@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
@@ -40,7 +41,7 @@ class UserController extends Controller
         User::create($request->all());
 
         // if true, redirect to index
-        return redirect()->route('user.indexuser')->with('success', 'Add data success!');
+        return redirect()->route('user.index')->with('success', 'Add data success!');
     }
 
     /**
@@ -83,7 +84,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = $request->password;
         $user->save();
-        return redirect()->route('user.indexuser');
+        return redirect()->route('user.index');
     }
 
     /**
@@ -96,6 +97,15 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        return redirect()->route('user.indexuser');
+        return redirect()->route('user.index');
     }
+    public function __construct()
+    {
+    //$this->middleware('auth');
+        $this->middleware(function($request, $next){
+        if(Gate::allows('manage-users')) return $next($request);
+        abort(403, 'Anda tidak memiliki cukup hak akses');
+    });
+    }
+
 }

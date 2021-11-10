@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                <form action="/user/{{$user->id}}" method="post">
+                <form action="/user" method="post">
                         @csrf
 
                         <div class="form-group row">
@@ -74,7 +74,15 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
+                        <div class="form-group row">
+                            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
+                            <div class="col-md-6">
+                                <select class="form-control" name="role">
+                                    <option value="user">User</option>
+                                    <option value="admin">Admin</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -82,10 +90,11 @@
                                 </button>
                             </div>
                         </div>
+                        
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-@endsection 
+@endsection
