@@ -10,7 +10,7 @@ class TambahKolomDiTabelUser extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() //MENAMBAHKAN KOLOM PADA TABLE USERS SETELAH ID 
     {
         Schema::table('users', function (Blueprint $table){
             $table->string('username', 20)->after('id')->nullable()->unique();

@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run() //DATA AWAL TABLE USERS
     {
         DB::table('users')->insert([
             'name' => 'Administrator',

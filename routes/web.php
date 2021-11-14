@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StudentController; //untuk menjalankan fungsi-fungsi pada StudentController
 use App\Http\Controllers\UserController;
 
 
-
+//file ini digunakan untuk menjalankan routes 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +25,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('students', StudentController::class);
+Route::resource('students', StudentController::class); //untuk menjalankan fungsi-fungsi pada StudentController
 
 Route::resource('user', UserController::class);
 

@@ -7,7 +7,7 @@ use App\Models\Student;
 use App\Models\Kelas;
 use PDF;
 
-
+//funsgi fili ini untuk menyediakan fungsi CRUD untuk tabel students. Sehingga kita tidak perlu membuat masing-masing route
 
 
 class StudentController extends Controller
@@ -17,7 +17,7 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //digunakan untuk mengambil semua data students.
     {
         $student = Student::with('kelas')->get();
         return view('students.index', ['student'=>$student]);
@@ -28,7 +28,7 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create() //dgunakan untuk menampilkan halaman create
     {
         $kelas = Kelas::all();
         return view('students.create',['kelas'=>$kelas]);
@@ -40,7 +40,7 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //untuk memproses penambahan data. Jika penambahan data berhasil akan redirect ke halaman students.index
     {
         $student = new Student;
 
@@ -82,7 +82,7 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id) //untuk menampilkan halaman edit
     {
         $student = Student::find($id);
         $kelas = Kelas::all();
@@ -96,7 +96,7 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) //untuk memproses perubahan data. Jika perubahan data berhasil akan redirect ke halaman students.index
     {
         $student = Student::find($id);
         $student->nim = $request->nim;
@@ -128,7 +128,7 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id) //untuk memproses hapus data. Jika perubahan data berhasil akan redirect ke halaman students.index
     {
         $student = Student::find($id);
         $student->delete();

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserBaruSeeder extends Seeder
-{
+{ //file seeder UserBaruSeeder untuk menambahkan kolom username pada table user
     /**
      * Run the database seeds.
      *
@@ -13,7 +13,7 @@ class UserBaruSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        DB::table('users')->insert([ //DATA AWAL BARU LOGIN MENGGUNAKAN USERNAME 
             'username' => 'admin',
             'name' => 'Administrator Baru',
             'email' => 'admin.baru@admin.com',

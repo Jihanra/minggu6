@@ -19,8 +19,8 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
-
+    use AuthenticatesUsers; //file LoginController.php mengadopsi/menggunakan trait class AuthenticatesUsers
+    //sehingga proses login mengikuti apa yang ada di class AuthenticatesUsers
     /**
      * Where to redirect users after login.
      *
@@ -37,7 +37,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    public function username()
+    public function username() //mengubah defaullt mengganti dari menggunakan email menjadi menggunakan username
     {
         return 'username';
     }
